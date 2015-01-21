@@ -7,6 +7,7 @@
 //
 
 #import "Contact.h"
+#import "ContactPhoneNumbers.h"
 
 @interface Contact ()
 
@@ -37,7 +38,12 @@
 
 - (NSString *)phoneNumber
 {
-    return [self.data objectForKey:@""];
+    return [[self phoneNumbers] mainPhoneNumber];
+}
+
+- (ContactPhoneNumbers *)phoneNumbers
+{
+    return [[ContactPhoneNumbers alloc] initWithDictionary:[self.data objectForKey:@"phone"]];
 }
 
 - (NSURL *)avatarURL

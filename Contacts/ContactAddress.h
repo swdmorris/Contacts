@@ -1,5 +1,5 @@
 //
-//  ContactDetail.h
+//  ContactAddress.h
 //  Contacts
 //
 //  Created by Spencer Morris on 1/21/15.
@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ContactAddress.h"
 
-@interface ContactDetail : NSObject
+@interface ContactAddress : NSObject
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

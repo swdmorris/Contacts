@@ -1,5 +1,5 @@
 //
-//  ContactDetail.h
+//  ContactPhoneNumbers.h
 //  Contacts
 //
 //  Created by Spencer Morris on 1/21/15.
@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ContactAddress.h"
 
-@interface ContactDetail : NSObject
+@interface ContactPhoneNumbers : NSObject
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+
+- (NSString *)mainPhoneNumber;
+- (NSString *)cellPhoneNumber;
+- (NSString *)homePhoneNumber;
+- (NSString *)workPhoneNumber;
 
 @end

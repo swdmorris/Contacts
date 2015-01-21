@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="gxk-NN-NSq">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="efz-cX-zEi">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" id="DJ1-wm-lHv" customClass="ContactCell">
@@ -72,22 +72,23 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="4G0-Qc-4oF"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="pSV-nW-Vqz"/>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="ex8-qM-AQa"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="mCV-zp-uLC"/>
                                 </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="gxk-NN-NSq" secondAttribute="bottom" id="2M4-7O-Nks"/>
-                            <constraint firstItem="gxk-NN-NSq" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="GhM-Rq-lzX"/>
-                            <constraint firstItem="gxk-NN-NSq" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="mKE-SF-H8y"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gxk-NN-NSq" secondAttribute="trailing" constant="-16" id="zDm-e1-AgI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="efz-cX-zEi" secondAttribute="trailing" constant="-16" id="cBh-Sn-3S3"/>
+                            <constraint firstItem="efz-cX-zEi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="iAY-eh-qWC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="efz-cX-zEi" secondAttribute="bottom" id="jjq-bm-vRQ"/>
+                            <constraint firstItem="efz-cX-zEi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="wa3-JY-dkc"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="Contacts" id="eQe-Bp-3ay"/>
                     <connections>
-                        <outlet property="tableView" destination="gxk-NN-NSq" id="xCr-mi-F52"/>
+                        <outlet property="tableView" destination="efz-cX-zEi" id="WdF-Qw-hSe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

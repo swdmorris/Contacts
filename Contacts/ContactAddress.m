@@ -1,20 +1,20 @@
 //
-//  ContactDetail.m
+//  ContactAddress.m
 //  Contacts
 //
 //  Created by Spencer Morris on 1/21/15.
 //  Copyright (c) 2015 SolsticeMobile. All rights reserved.
 //
 
-#import "ContactDetail.h"
+#import "ContactAddress.h"
 
-@interface ContactDetail ()
+@interface ContactAddress ()
 
 @property (strong, nonatomic) NSDictionary *data;
 
 @end
 
-@implementation ContactDetail
+@implementation ContactAddress
 
 - (id)initWithDictionary:(NSDictionary *)dictionary
 {
@@ -30,12 +30,8 @@
     return self;
 }
 
-//"employeeId":5,
-//"favorite": false,
-//"largeImageURL": "https://solstice.applauncher.com/external/Contacts/images/image3_large.jpeg",
-//"email": "rosemarie@fifield.com",
-//"website": "http://www.solstice-mobile.com",
-//"address": {
+@end
+
 //    "street": "641 W Lake St",
 //    "city": "Chicago",
 //    "state": "IL",
@@ -43,6 +39,3 @@
 //    "zip": "60661",
 //    "latitude": 41.885383,
 //    "longitude": -87.644481
-//}
-
-@end
