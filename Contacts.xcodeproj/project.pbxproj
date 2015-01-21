@@ -17,6 +17,7 @@
 		24E9EC9E1A7062BF00816436 /* CustomVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9EC9D1A7062BF00816436 /* CustomVC.m */; };
 		24E9ECA11A7063E300816436 /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECA01A7063E300816436 /* Const.m */; };
 		24E9ECA41A70649F00816436 /* ContactListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECA31A70649F00816436 /* ContactListVC.m */; };
+		24E9ECA71A70679100816436 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECA61A70679100816436 /* ContactCell.m */; };
 		572B619B506679740CF5C758 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1419568F4683B0B6C79D940A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,8 @@
 		24E9ECA01A7063E300816436 /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
 		24E9ECA21A70649F00816436 /* ContactListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactListVC.h; sourceTree = "<group>"; };
 		24E9ECA31A70649F00816436 /* ContactListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactListVC.m; sourceTree = "<group>"; };
+		24E9ECA51A70679100816436 /* ContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactCell.h; sourceTree = "<group>"; };
+		24E9ECA61A70679100816436 /* ContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactCell.m; sourceTree = "<group>"; };
 		3F14B9582FF7AA11C3CB0429 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EEFD6E24B143C9FB99839C72 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +171,8 @@
 		24E9EC961A7060E900816436 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				24E9ECA51A70679100816436 /* ContactCell.h */,
+				24E9ECA61A70679100816436 /* ContactCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				24E9EC9B1A70611100816436 /* ApiClient.m in Sources */,
 				24E9EC9E1A7062BF00816436 /* CustomVC.m in Sources */,
 				24E9EC751A70605300816436 /* AppDelegate.m in Sources */,
+				24E9ECA71A70679100816436 /* ContactCell.m in Sources */,
 				24E9EC721A70605300816436 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

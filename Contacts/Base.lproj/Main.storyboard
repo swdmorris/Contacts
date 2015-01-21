@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" id="DJ1-wm-lHv">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ContactCell" id="DJ1-wm-lHv" customClass="ContactCell">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DJ1-wm-lHv" id="Xe4-0r-tPD">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -52,6 +52,11 @@
                                                 <constraint firstAttribute="centerY" secondItem="VQ3-kf-Jlq" secondAttribute="centerY" id="wp9-ab-RF7"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="VQ3-kf-Jlq" id="EpY-s0-PAm"/>
+                                            <outlet property="nameLabel" destination="TlR-46-T22" id="IyV-Aq-mWh"/>
+                                            <outlet property="phoneNumberLabel" destination="9Cg-bT-1As" id="Ep6-hB-ly4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
