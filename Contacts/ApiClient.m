@@ -8,7 +8,6 @@
 
 #import "ApiClient.h"
 #import "Const.h"
-#import <AFNetworking/AFNetworking.h>
 
 @interface ApiClient ()
 
@@ -31,6 +30,26 @@
 {
     [self.manager.operationQueue cancelAllOperations];
     self.manager = nil;
+}
+
+- (void)getContactsWithCallback:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))callback
+{
+    [self.manager GET:@"contacts.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        callback(operation, responseObject, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        callback(operation, nil, error);
+    }];
+}
+
+- (void)getContactDetailForContactId:(NSString *)contactId withCallback:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))callback
+{
+    NSString *path = [NSString stringWithFormat:@"Contacts/id/%@.json", contactId];
+    
+    [self.manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        callback(operation, responseObject, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        callback(operation, nil, error);
+    }];
 }
 
 @end

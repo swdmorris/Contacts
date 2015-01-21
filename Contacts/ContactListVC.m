@@ -7,6 +7,10 @@
 //
 
 #import "ContactListVC.h"
+#import "ContactCell.h"
+#import "Contact.h"
+
+#define kContactCellId @"ContactCell"
 
 @interface ContactListVC ()
 
@@ -22,6 +26,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self performLoadContacts];
 }
 
 #pragma mark- UITableView datasource/delegate
@@ -40,7 +45,36 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return nil;
+    ContactCell *cell = [tableView dequeueReusableCellWithIdentifier:kContactCellId];
+    
+    Contact *contact = [self.contacts objectAtIndex:indexPath.row];
+    [cell setContactName:contact.name phoneNumber:contact.phoneNumber andAvatarImageURL:contact.avatarURL];
+    
+    return cell;
+}
+
+#pragma mark- Networking
+
+- (void)performLoadContacts
+{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    [self.apiClient getContactsWithCallback:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+        if (! error && operation.response.statusCode == 200 && [responseObject isKindOfClass:[NSArray class]]) {
+            NSLog(@"Recieved contacts");
+            NSMutableArray *mutableContacts = [[NSMutableArray alloc] init];
+            for (NSDictionary *contactDictonary in responseObject) {
+                Contact *contact = [[Contact alloc] initWithDictionary:contactDictonary];
+                [mutableContacts addObject:contact];
+            }
+            self.contacts = [mutableContacts copy];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"Error getting contacts");
+        }
+    }];
 }
 
 @end

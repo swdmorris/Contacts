@@ -27,28 +27,40 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DJ1-wm-lHv" id="Xe4-0r-tPD">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VQ3-kf-Jlq">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_avatar.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VQ3-kf-Jlq">
                                                     <rect key="frame" x="0.0" y="0.0" width="69" height="69"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="69" id="IsV-fD-L1k"/>
                                                         <constraint firstAttribute="width" constant="69" id="fgA-r1-RKp"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="TlR-46-T22">
-                                                    <rect key="frame" x="77" y="10" width="235" height="27"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="TlR-46-T22">
+                                                    <rect key="frame" x="77" y="8" width="235" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="27" id="pPH-tu-ZWp"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="(312) 555-1234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-bT-1As">
-                                                    <rect key="frame" x="77" y="38" width="235" height="25"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(312) 555-1234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="9Cg-bT-1As">
+                                                    <rect key="frame" x="77" y="36" width="235" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="VFJ-4t-Wxe"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="TlR-46-T22" firstAttribute="top" secondItem="Xe4-0r-tPD" secondAttribute="topMargin" id="Ouf-DM-tMH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9Cg-bT-1As" secondAttribute="bottom" id="SQR-h8-3eK"/>
+                                                <constraint firstItem="9Cg-bT-1As" firstAttribute="trailing" secondItem="Xe4-0r-tPD" secondAttribute="trailingMargin" id="apO-EE-WDI"/>
                                                 <constraint firstItem="VQ3-kf-Jlq" firstAttribute="leading" secondItem="Xe4-0r-tPD" secondAttribute="leadingMargin" constant="-8" id="c8S-S6-5em"/>
+                                                <constraint firstItem="TlR-46-T22" firstAttribute="trailing" secondItem="Xe4-0r-tPD" secondAttribute="trailingMargin" id="gYN-Ns-3oC"/>
+                                                <constraint firstItem="TlR-46-T22" firstAttribute="leading" secondItem="VQ3-kf-Jlq" secondAttribute="trailing" constant="8" id="lR4-xv-UyD"/>
+                                                <constraint firstItem="9Cg-bT-1As" firstAttribute="leading" secondItem="VQ3-kf-Jlq" secondAttribute="trailing" constant="8" id="tw3-WA-vts"/>
                                                 <constraint firstAttribute="centerY" secondItem="VQ3-kf-Jlq" secondAttribute="centerY" id="wp9-ab-RF7"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -102,4 +114,7 @@
             <point key="canvasLocation" x="199" y="-368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_avatar.jpg" width="180" height="180"/>
+    </resources>
 </document>

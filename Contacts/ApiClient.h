@@ -7,9 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
 
 @interface ApiClient : NSObject
 
 - (void)cancelAllPendingRequests;
+
+- (void)getContactsWithCallback:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))callback;
+- (void)getContactDetailForContactId:(NSString *)contactId withCallback:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))callback;
 
 @end

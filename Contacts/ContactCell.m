@@ -21,7 +21,7 @@
 
 - (void)setContactName:(NSString *)name phoneNumber:(NSString *)phoneNumber andAvatarImageURL:(NSURL *)avatarURL
 {
-    [self.avatarImageView sd_setImageWithURL:avatarURL placeholderImage:[UIImage imageNamed:@""]];
+    [self.avatarImageView sd_setImageWithURL:avatarURL placeholderImage:[UIImage imageNamed:@"icon_avatar.jpg"]];
     self.nameLabel.text = name;
     self.phoneNumberLabel.text = phoneNumber;
 }

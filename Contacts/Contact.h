@@ -12,4 +12,8 @@
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
+- (NSString *)name;
+- (NSString *)phoneNumber;
+- (NSURL *)avatarURL;
+
 @end

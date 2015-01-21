@@ -20,6 +20,7 @@
 		24E9ECA71A70679100816436 /* ContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECA61A70679100816436 /* ContactCell.m */; };
 		24E9ECAA1A7068BA00816436 /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECA91A7068BA00816436 /* Contact.m */; };
 		24E9ECAD1A70693100816436 /* ContactDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECAC1A70693100816436 /* ContactDetail.m */; };
+		24E9ECB01A706B0D00816436 /* icon_avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ECAF1A706B0D00816436 /* icon_avatar.jpg */; };
 		572B619B506679740CF5C758 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1419568F4683B0B6C79D940A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		24E9ECA91A7068BA00816436 /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
 		24E9ECAB1A70693100816436 /* ContactDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetail.h; sourceTree = "<group>"; };
 		24E9ECAC1A70693100816436 /* ContactDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetail.m; sourceTree = "<group>"; };
+		24E9ECAF1A706B0D00816436 /* icon_avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_avatar.jpg; sourceTree = "<group>"; };
 		3F14B9582FF7AA11C3CB0429 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EEFD6E24B143C9FB99839C72 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				24E9EC6E1A70605300816436 /* Contacts */,
+				24E9ECAE1A706B0200816436 /* Images */,
 				24E9EC881A70605300816436 /* ContactsTests */,
 				24E9EC6D1A70605300816436 /* Products */,
 				173F0DD838DFB84E8B80FC26 /* Pods */,
@@ -205,6 +208,14 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		24E9ECAE1A706B0200816436 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				24E9ECAF1A706B0D00816436 /* icon_avatar.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24E9EC7B1A70605300816436 /* Main.storyboard in Resources */,
+				24E9ECB01A706B0D00816436 /* icon_avatar.jpg in Resources */,
 				24E9EC801A70605300816436 /* LaunchScreen.xib in Resources */,
 				24E9EC7D1A70605300816436 /* Images.xcassets in Resources */,
 			);
