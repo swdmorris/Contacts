@@ -10,4 +10,6 @@
 
 @interface ApiClient : NSObject
 
+- (void)cancelAllPendingRequests;
+
 @end
