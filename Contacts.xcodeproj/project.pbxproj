@@ -13,6 +13,7 @@
 		24E9EC7D1A70605300816436 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24E9EC7C1A70605300816436 /* Images.xcassets */; };
 		24E9EC801A70605300816436 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24E9EC7E1A70605300816436 /* LaunchScreen.xib */; };
 		24E9EC8C1A70605300816436 /* ContactsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9EC8B1A70605300816436 /* ContactsTests.m */; };
+		24E9EC9B1A70611100816436 /* ApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9EC9A1A70611100816436 /* ApiClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,8 @@
 		24E9EC851A70605300816436 /* ContactsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		24E9EC8A1A70605300816436 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24E9EC8B1A70605300816436 /* ContactsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactsTests.m; sourceTree = "<group>"; };
+		24E9EC991A70611100816436 /* ApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApiClient.h; sourceTree = "<group>"; };
+		24E9EC9A1A70611100816436 /* ApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApiClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,10 @@
 		24E9EC6E1A70605300816436 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				24E9EC981A7060F100816436 /* Helpers */,
+				24E9EC971A7060ED00816436 /* Models */,
+				24E9EC961A7060E900816436 /* Views */,
+				24E9EC951A7060E200816436 /* View Controllers */,
 				24E9EC731A70605300816436 /* AppDelegate.h */,
 				24E9EC741A70605300816436 /* AppDelegate.m */,
 				24E9EC791A70605300816436 /* Main.storyboard */,
@@ -112,6 +119,36 @@
 				24E9EC8A1A70605300816436 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		24E9EC951A7060E200816436 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		24E9EC961A7060E900816436 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		24E9EC971A7060ED00816436 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		24E9EC981A7060F100816436 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				24E9EC991A70611100816436 /* ApiClient.h */,
+				24E9EC9A1A70611100816436 /* ApiClient.m */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24E9EC9B1A70611100816436 /* ApiClient.m in Sources */,
 				24E9EC751A70605300816436 /* AppDelegate.m in Sources */,
 				24E9EC721A70605300816436 /* main.m in Sources */,
 			);
@@ -338,6 +376,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Contacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -348,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Contacts/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
