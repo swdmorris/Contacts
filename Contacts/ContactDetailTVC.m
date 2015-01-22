@@ -18,7 +18,9 @@
 #define INDEXPATH_WORK_PHONE [NSIndexPath indexPathForRow:3 inSection:0]
 
 typedef enum {
-    callPhoneNumberAlertType,
+    callCellPhoneNumberAlertType,
+    callHomePhoneNumberAlertType,
+    callWorkPhoneNumberAlertType,
     noAlertType
 } AlertType;
 
@@ -96,17 +98,21 @@ typedef enum {
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
-    
     if ([indexPath isEqual:INDEXPATH_CELL_PHONE]) {
-        self.alertType = callPhoneNumberAlertType;
-        NSString *title = [NSString stringWithFormat:@""];
-        NSString *message = [NSString stringWithFormat:@""];
+        self.alertType = callCellPhoneNumberAlertType;
+        NSString *title = [NSString stringWithFormat:@"Call %@", self.contact.name];
+        NSString *message = [NSString stringWithFormat:@"Would you like to call %@'s cell phone?", self.contact.name];
         [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
     } else if ([indexPath isEqual:INDEXPATH_HOME_PHONE]) {
-        self.alertType = callPhoneNumberAlertType;
+        self.alertType = callHomePhoneNumberAlertType;
+        NSString *title = [NSString stringWithFormat:@"Call %@", self.contact.name];
+        NSString *message = [NSString stringWithFormat:@"Would you like to call %@'s home phone?", self.contact.name];
+        [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
     } else if ([indexPath isEqual:INDEXPATH_WORK_PHONE]) {
-        self.alertType = callPhoneNumberAlertType;
+        self.alertType = callWorkPhoneNumberAlertType;
+        NSString *title = [NSString stringWithFormat:@"Call %@", self.contact.name];
+        NSString *message = [NSString stringWithFormat:@"Would you like to call %@'s work phone?", self.contact.name];
+        [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
     }
 }
 
@@ -114,7 +120,25 @@ typedef enum {
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    if (self.alertType == callCellPhoneNumberAlertType && buttonIndex == 1) {
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", self.contact.phoneNumbers.cellPhoneNumber]];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } else if (self.alertType == callHomePhoneNumberAlertType && buttonIndex == 1) {
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", self.contact.phoneNumbers.homePhoneNumber]];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    } else if (self.alertType == callWorkPhoneNumberAlertType && buttonIndex == 1) {
+        NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"tel://%@", self.contact.phoneNumbers.workPhoneNumber]];
+        if ([[UIApplication sharedApplication] canOpenURL:url]) {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
     
+    // reset alert type so next alert isn't interpreted as something wrong
+    self.alertType = noAlertType;
 }
 
 #pragma mark- Networking
