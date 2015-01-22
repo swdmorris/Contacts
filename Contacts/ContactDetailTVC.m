@@ -13,6 +13,10 @@
 #import "Contact.h"
 #import "ContactDetail.h"
 
+#define INDEXPATH_CELL_PHONE [NSIndexPath indexPathForRow:1 inSection:0]
+#define INDEXPATH_HOME_PHONE [NSIndexPath indexPathForRow:2 inSection:0]
+#define INDEXPATH_WORK_PHONE [NSIndexPath indexPathForRow:3 inSection:0]
+
 @interface ContactDetailTVC ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -64,6 +68,22 @@
     
     self.emailLabel.text = self.contactDetails.email;
     [self.avatarImageView sd_setImageWithURL:self.contactDetails.avatarURL];
+}
+
+#pragma mark- UITableView datasource/delegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // hide cells for phone numbers if no phone number is present
+    if (indexPath.row == INDEXPATH_CELL_PHONE.row && indexPath.section == INDEXPATH_CELL_PHONE.section && self.contact.phoneNumbers.cellPhoneNumber.length < 1) {
+        return 0.0f;
+    } else if (indexPath.row == INDEXPATH_HOME_PHONE.row && indexPath.section == INDEXPATH_HOME_PHONE.section && self.contact.phoneNumbers.homePhoneNumber.length < 1) {
+        return 0.0f;
+    } else if (indexPath.row == INDEXPATH_WORK_PHONE.row && indexPath.section == INDEXPATH_WORK_PHONE.section && self.contact.phoneNumbers.workPhoneNumber.length < 1) {
+        return 0.0f;
+    } else {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
 }
 
 #pragma mark- Networking
