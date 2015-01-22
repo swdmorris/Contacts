@@ -51,6 +51,7 @@ typedef enum {
     
     [self performLoadContactDetails];
     self.title = self.contact.name;
+    [self setupUI];
 }
 
 - (ApiClient *)apiClient
@@ -65,6 +66,7 @@ typedef enum {
 
 - (void)setupUI
 {
+    // setup outlets with contact data
     self.nameLabel.text = self.contact.name;
     self.companyNameLabel.text = self.contact.companyName;
     self.cellNumberLabel.text = self.contact.phoneNumbers.cellPhoneNumber;
@@ -79,6 +81,25 @@ typedef enum {
     self.emailLabel.text = self.contactDetails.email;
     [self.avatarImageView sd_setImageWithURL:self.contactDetails.avatarURL];
     self.avatarImageView.layer.cornerRadius = MIN((self.avatarImageView.frame.size.width / 2.0), (self.avatarImageView.frame.size.height / 2.0));
+}
+
+- (void)sendEmailToContact
+{
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
+        mailComposeViewController.mailComposeDelegate = self;
+        mailComposeViewController.delegate = self;
+        [mailComposeViewController setToRecipients:[NSArray arrayWithObject:self.contactDetails.email]];
+        [self presentViewController:mailComposeViewController animated:YES completion:nil];
+    } else {
+        NSLog(@"No email client available"); // should only happen on the iphone simulator
+    }
+}
+
+- (void)showAlertViewToCallContactWithMessage:(NSString *)message
+{
+    NSString *title = [NSString stringWithFormat:@"Call %@", self.contact.name];
+    [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
 }
 
 #pragma mark- UITableView datasource/delegate
@@ -100,28 +121,22 @@ typedef enum {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath isEqual:INDEXPATH_CELL_PHONE]) {
+        // save alert type for UIAlertViewDelegate reference
         self.alertType = callCellPhoneNumberAlertType;
-        NSString *title = [NSString stringWithFormat:@"Call %@", self.contact.name];
         NSString *message = [NSString stringWithFormat:@"Would you like to call %@'s cell phone?", self.contact.name];
-        [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
+        [self showAlertViewToCallContactWithMessage:message];
     } else if ([indexPath isEqual:INDEXPATH_HOME_PHONE]) {
+        // save alert type for UIAlertViewDelegate reference
         self.alertType = callHomePhoneNumberAlertType;
-        NSString *title = [NSString stringWithFormat:@"Call %@", self.contact.name];
         NSString *message = [NSString stringWithFormat:@"Would you like to call %@'s home phone?", self.contact.name];
-        [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
+        [self showAlertViewToCallContactWithMessage:message];
     } else if ([indexPath isEqual:INDEXPATH_WORK_PHONE]) {
+        // save alert type for UIAlertViewDelegate reference
         self.alertType = callWorkPhoneNumberAlertType;
-        NSString *title = [NSString stringWithFormat:@"Call %@", self.contact.name];
         NSString *message = [NSString stringWithFormat:@"Would you like to call %@'s work phone?", self.contact.name];
-        [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
+        [self showAlertViewToCallContactWithMessage:message];
     } else if ([indexPath isEqual:INDEXPATH_EMAIL]) {
-        if ([MFMailComposeViewController canSendMail]) {
-            MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
-            mailComposeViewController.mailComposeDelegate = self;
-            mailComposeViewController.delegate = self;
-            [mailComposeViewController setToRecipients:[NSArray arrayWithObject:self.contactDetails.email]];
-            [self presentViewController:mailComposeViewController animated:YES completion:nil];
-        }
+        [self sendEmailToContact];
     }
 }
 
