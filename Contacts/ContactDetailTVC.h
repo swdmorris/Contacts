@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Contact.h"
 
-@interface ContactDetailTVC : UITableViewController
+@interface ContactDetailTVC : UITableViewController <UIAlertViewDelegate>
 
 @property (strong, nonatomic) Contact *contact;
 

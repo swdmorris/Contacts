@@ -111,6 +111,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		246C9F1E1A714D5A0023C2E2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		24E9EC631A70605300816436 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +142,7 @@
 		24E9EC6E1A70605300816436 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				246C9F1E1A714D5A0023C2E2 /* Categories */,
 				24E9EC981A7060F100816436 /* Helpers */,
 				24E9EC971A7060ED00816436 /* Models */,
 				24E9EC961A7060E900816436 /* Views */,

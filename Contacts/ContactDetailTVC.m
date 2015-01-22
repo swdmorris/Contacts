@@ -17,6 +17,11 @@
 #define INDEXPATH_HOME_PHONE [NSIndexPath indexPathForRow:2 inSection:0]
 #define INDEXPATH_WORK_PHONE [NSIndexPath indexPathForRow:3 inSection:0]
 
+typedef enum {
+    callPhoneNumberAlertType,
+    noAlertType
+} AlertType;
+
 @interface ContactDetailTVC ()
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -31,6 +36,7 @@
 
 @property (strong, nonatomic) ContactDetail *contactDetails;
 @property (strong, nonatomic) ApiClient *apiClient;
+@property AlertType alertType;
 
 @end
 
@@ -77,15 +83,38 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // hide cells for phone numbers if no phone number is present
-    if (indexPath.row == INDEXPATH_CELL_PHONE.row && indexPath.section == INDEXPATH_CELL_PHONE.section && self.contact.phoneNumbers.cellPhoneNumber.length < 1) {
+    if ([indexPath isEqual:INDEXPATH_CELL_PHONE] && self.contact.phoneNumbers.cellPhoneNumber.length < 1) {
         return 0.0f;
-    } else if (indexPath.row == INDEXPATH_HOME_PHONE.row && indexPath.section == INDEXPATH_HOME_PHONE.section && self.contact.phoneNumbers.homePhoneNumber.length < 1) {
+    } else if ([indexPath isEqual:INDEXPATH_HOME_PHONE] && self.contact.phoneNumbers.homePhoneNumber.length < 1) {
         return 0.0f;
-    } else if (indexPath.row == INDEXPATH_WORK_PHONE.row && indexPath.section == INDEXPATH_WORK_PHONE.section && self.contact.phoneNumbers.workPhoneNumber.length < 1) {
+    } else if ([indexPath isEqual:INDEXPATH_WORK_PHONE] && self.contact.phoneNumbers.workPhoneNumber.length < 1) {
         return 0.0f;
     } else {
         return [super tableView:tableView heightForRowAtIndexPath:indexPath];
     }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    
+    if ([indexPath isEqual:INDEXPATH_CELL_PHONE]) {
+        self.alertType = callPhoneNumberAlertType;
+        NSString *title = [NSString stringWithFormat:@""];
+        NSString *message = [NSString stringWithFormat:@""];
+        [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
+    } else if ([indexPath isEqual:INDEXPATH_HOME_PHONE]) {
+        self.alertType = callPhoneNumberAlertType;
+    } else if ([indexPath isEqual:INDEXPATH_WORK_PHONE]) {
+        self.alertType = callPhoneNumberAlertType;
+    }
+}
+
+#pragma mark- UIAlertView delegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
 }
 
 #pragma mark- Networking
