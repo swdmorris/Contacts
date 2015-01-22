@@ -55,6 +55,13 @@ NSString *SEGUE_CONTACT_DETAIL = @"contactDetail";
     return cell;
 }
 
+#pragma mark- Actions
+
+- (IBAction)refreshContactsButtonPressed
+{
+    [self performLoadContacts];
+}
+
 #pragma mark- Networking
 
 - (void)performLoadContacts
@@ -75,6 +82,7 @@ NSString *SEGUE_CONTACT_DETAIL = @"contactDetail";
             [self.tableView reloadData];
         } else {
             NSLog(@"Error getting contacts");
+            [[[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error loading contacts. Please check your connection and try again." delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil] show];
         }
     }];
 }
