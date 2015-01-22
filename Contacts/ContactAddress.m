@@ -30,6 +30,26 @@
     return self;
 }
 
+- (NSString *)street
+{
+    return [self.data objectForKey:@"street"];
+}
+
+- (NSString *)city
+{
+    return [self.data objectForKey:@"city"];
+}
+
+- (NSString *)state
+{
+    return [self.data objectForKey:@"state"];
+}
+
+- (NSString *)zip
+{
+    return [self.data objectForKey:@"zip"];
+}
+
 @end
 
 //    "street": "641 W Lake St",

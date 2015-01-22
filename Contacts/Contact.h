@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ContactPhoneNumbers.h"
 
 @interface Contact : NSObject
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
 - (NSString *)name;
+- (NSString *)companyName;
 - (NSNumber *)employeeId;
+- (NSDate *)birthday;
 - (NSString *)phoneNumber;
+- (ContactPhoneNumbers *)phoneNumbers;
 - (NSURL *)avatarURL;
 
 @end

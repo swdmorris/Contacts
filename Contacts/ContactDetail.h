@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ContactAddress.h"
 
 @interface ContactDetail : NSObject
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+
+- (NSString *)email;
+- (NSString *)addressFormatted;
+- (BOOL)isFavorite;
+- (NSURL *)avatarURL;
 
 @end

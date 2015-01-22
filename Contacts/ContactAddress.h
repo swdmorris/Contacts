@@ -12,4 +12,9 @@
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
+- (NSString *)street;
+- (NSString *)city;
+- (NSString *)state;
+- (NSString *)zip;
+
 @end

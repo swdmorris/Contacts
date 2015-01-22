@@ -7,7 +7,6 @@
 //
 
 #import "Contact.h"
-#import "ContactPhoneNumbers.h"
 
 @interface Contact ()
 
@@ -36,9 +35,22 @@
     return [self.data objectForKey:@"name"];
 }
 
+- (NSString *)companyName
+{
+    return [self.data objectForKey:@"company"];
+}
+
 - (NSNumber *)employeeId
 {
     return [self.data objectForKey:@"employeeId"];
+}
+
+- (NSDate *)birthday
+{
+    NSNumber *timeIntervalNumber = [self.data objectForKey:@"birthdate"];
+    NSInteger timeInterval = timeIntervalNumber.integerValue;
+    
+    return [NSDate dateWithTimeIntervalSince1970:timeInterval];
 }
 
 - (NSString *)phoneNumber

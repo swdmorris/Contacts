@@ -32,9 +32,9 @@
 
 - (NSString *)mainPhoneNumber
 {
-    if ([self cellPhoneNumber]) {
+    if ([self cellPhoneNumber].length > 0) {
         return [self cellPhoneNumber];
-    } else if ([self homePhoneNumber]) {
+    } else if ([self homePhoneNumber].length > 0) {
         return [self homePhoneNumber];
     } else {
         return [self workPhoneNumber];
