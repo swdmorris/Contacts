@@ -19,6 +19,13 @@
 
 @implementation ContactCell
 
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    
+    self.avatarImageView.layer.cornerRadius = MIN((self.avatarImageView.frame.size.width / 2.0), (self.avatarImageView.frame.size.height / 2.0));
+}
+
 - (void)setContactName:(NSString *)name phoneNumber:(NSString *)phoneNumber andAvatarImageURL:(NSURL *)avatarURL
 {
     [self.avatarImageView sd_setImageWithURL:avatarURL placeholderImage:[UIImage imageNamed:@"icon_avatar.jpg"]];

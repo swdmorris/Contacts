@@ -68,6 +68,7 @@
     
     self.emailLabel.text = self.contactDetails.email;
     [self.avatarImageView sd_setImageWithURL:self.contactDetails.avatarURL];
+    self.avatarImageView.layer.cornerRadius = MIN((self.avatarImageView.frame.size.width / 2.0), (self.avatarImageView.frame.size.height / 2.0));
 }
 
 #pragma mark- UITableView datasource/delegate
