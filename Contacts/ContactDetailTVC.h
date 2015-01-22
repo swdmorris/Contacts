@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "Contact.h"
 
-@interface ContactDetailTVC : UITableViewController <UIAlertViewDelegate>
+@interface ContactDetailTVC : UITableViewController <UIAlertViewDelegate, MFMailComposeViewControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) Contact *contact;
 

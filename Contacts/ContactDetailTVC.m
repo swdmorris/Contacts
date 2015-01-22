@@ -16,6 +16,7 @@
 #define INDEXPATH_CELL_PHONE [NSIndexPath indexPathForRow:1 inSection:0]
 #define INDEXPATH_HOME_PHONE [NSIndexPath indexPathForRow:2 inSection:0]
 #define INDEXPATH_WORK_PHONE [NSIndexPath indexPathForRow:3 inSection:0]
+#define INDEXPATH_EMAIL [NSIndexPath indexPathForRow:6 inSection:0]
 
 typedef enum {
     callCellPhoneNumberAlertType,
@@ -113,7 +114,22 @@ typedef enum {
         NSString *title = [NSString stringWithFormat:@"Call %@", self.contact.name];
         NSString *message = [NSString stringWithFormat:@"Would you like to call %@'s work phone?", self.contact.name];
         [[[UIAlertView alloc] initWithTitle:title message:message delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil] show];
+    } else if ([indexPath isEqual:INDEXPATH_EMAIL]) {
+        if ([MFMailComposeViewController canSendMail]) {
+            MFMailComposeViewController *mailComposeViewController = [[MFMailComposeViewController alloc] init];
+            mailComposeViewController.mailComposeDelegate = self;
+            mailComposeViewController.delegate = self;
+            [mailComposeViewController setToRecipients:[NSArray arrayWithObject:self.contactDetails.email]];
+            [self presentViewController:mailComposeViewController animated:YES completion:nil];
+        }
     }
+}
+
+#pragma mark- MFMailComposeViewController delegate
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark- UIAlertView delegate

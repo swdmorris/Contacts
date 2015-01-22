@@ -24,6 +24,7 @@
 		24E9ECB31A706ECB00816436 /* ContactAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECB21A706ECB00816436 /* ContactAddress.m */; };
 		24E9ECB61A706EDC00816436 /* ContactPhoneNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECB51A706EDC00816436 /* ContactPhoneNumbers.m */; };
 		24E9ECB91A70730E00816436 /* ContactDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECB81A70730E00816436 /* ContactDetailTVC.m */; };
+		24F5D4E01A717A760050B5C1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24F5D4DF1A717A760050B5C1 /* MessageUI.framework */; };
 		572B619B506679740CF5C758 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1419568F4683B0B6C79D940A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		24E9ECB51A706EDC00816436 /* ContactPhoneNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPhoneNumbers.m; sourceTree = "<group>"; };
 		24E9ECB71A70730E00816436 /* ContactDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailTVC.h; sourceTree = "<group>"; };
 		24E9ECB81A70730E00816436 /* ContactDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailTVC.m; sourceTree = "<group>"; };
+		24F5D4DF1A717A760050B5C1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		3F14B9582FF7AA11C3CB0429 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EEFD6E24B143C9FB99839C72 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24F5D4E01A717A760050B5C1 /* MessageUI.framework in Frameworks */,
 				572B619B506679740CF5C758 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -106,6 +109,7 @@
 		19551536327E693B46B3396A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				24F5D4DF1A717A760050B5C1 /* MessageUI.framework */,
 				1419568F4683B0B6C79D940A /* libPods.a */,
 			);
 			name = Frameworks;
@@ -512,10 +516,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Contacts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -526,10 +532,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Contacts/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
