@@ -41,6 +41,7 @@
     [super viewDidLoad];
     
     [self performLoadContactDetails];
+    self.title = self.contact.name;
 }
 
 - (ApiClient *)apiClient
