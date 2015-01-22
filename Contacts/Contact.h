@@ -13,6 +13,7 @@
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
 - (NSString *)name;
+- (NSNumber *)employeeId;
 - (NSString *)phoneNumber;
 - (NSURL *)avatarURL;
 

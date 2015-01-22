@@ -23,6 +23,7 @@
 		24E9ECB01A706B0D00816436 /* icon_avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 24E9ECAF1A706B0D00816436 /* icon_avatar.jpg */; };
 		24E9ECB31A706ECB00816436 /* ContactAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECB21A706ECB00816436 /* ContactAddress.m */; };
 		24E9ECB61A706EDC00816436 /* ContactPhoneNumbers.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECB51A706EDC00816436 /* ContactPhoneNumbers.m */; };
+		24E9ECB91A70730E00816436 /* ContactDetailTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 24E9ECB81A70730E00816436 /* ContactDetailTVC.m */; };
 		572B619B506679740CF5C758 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1419568F4683B0B6C79D940A /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,8 @@
 		24E9ECB21A706ECB00816436 /* ContactAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactAddress.m; sourceTree = "<group>"; };
 		24E9ECB41A706EDC00816436 /* ContactPhoneNumbers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactPhoneNumbers.h; sourceTree = "<group>"; };
 		24E9ECB51A706EDC00816436 /* ContactPhoneNumbers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactPhoneNumbers.m; sourceTree = "<group>"; };
+		24E9ECB71A70730E00816436 /* ContactDetailTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactDetailTVC.h; sourceTree = "<group>"; };
+		24E9ECB81A70730E00816436 /* ContactDetailTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactDetailTVC.m; sourceTree = "<group>"; };
 		3F14B9582FF7AA11C3CB0429 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		EEFD6E24B143C9FB99839C72 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +182,8 @@
 				24E9EC9D1A7062BF00816436 /* CustomVC.m */,
 				24E9ECA21A70649F00816436 /* ContactListVC.h */,
 				24E9ECA31A70649F00816436 /* ContactListVC.m */,
+				24E9ECB71A70730E00816436 /* ContactDetailTVC.h */,
+				24E9ECB81A70730E00816436 /* ContactDetailTVC.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -371,6 +376,7 @@
 				24E9EC751A70605300816436 /* AppDelegate.m in Sources */,
 				24E9ECA71A70679100816436 /* ContactCell.m in Sources */,
 				24E9ECAD1A70693100816436 /* ContactDetail.m in Sources */,
+				24E9ECB91A70730E00816436 /* ContactDetailTVC.m in Sources */,
 				24E9EC721A70605300816436 /* main.m in Sources */,
 				24E9ECB31A706ECB00816436 /* ContactAddress.m in Sources */,
 			);

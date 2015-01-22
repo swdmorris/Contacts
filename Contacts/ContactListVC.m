@@ -9,6 +9,7 @@
 #import "ContactListVC.h"
 #import "ContactCell.h"
 #import "Contact.h"
+#import "ContactDetailTVC.h"
 
 #define kContactCellId @"ContactCell"
 
@@ -21,6 +22,7 @@
 @end
 
 @implementation ContactListVC
+NSString *SEGUE_CONTACT_DETAIL = @"contactDetail";
 
 - (void)viewDidLoad
 {
@@ -75,6 +77,18 @@
             NSLog(@"Error getting contacts");
         }
     }];
+}
+
+#pragma mark- End of lifecycle
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:SEGUE_CONTACT_DETAIL]) {
+        ContactDetailTVC *detailTVC = (ContactDetailTVC *) [segue destinationViewController];
+        NSIndexPath *indexPathOfSelectedCell = [self.tableView indexPathForSelectedRow];
+        Contact *selectedContact = [self.contacts objectAtIndex:indexPathOfSelectedCell.row];
+        [detailTVC setContact:selectedContact];
+    }
 }
 
 @end

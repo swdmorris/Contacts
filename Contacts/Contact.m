@@ -36,6 +36,11 @@
     return [self.data objectForKey:@"name"];
 }
 
+- (NSNumber *)employeeId
+{
+    return [self.data objectForKey:@"employeeId"];
+}
+
 - (NSString *)phoneNumber
 {
     return [[self phoneNumbers] mainPhoneNumber];
